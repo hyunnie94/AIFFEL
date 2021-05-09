@@ -353,4 +353,36 @@
 
 ---
 
-## [E19]
+## [E19] BERT KorQuAD : 인간보다 퀴즈를 잘 푸는 인공지능 (pretrained model 활용)
+#### [루브릭]
+1. BERT pretrained model을 활용한 KorQuAD 모델이 정상적으로 학습이 진행되었다.
+	* KorQuAD 모델의 validation accuracy가 안정적으로 증가하였다.
+2. KorQuAD Inference 결과가 원래의 정답과 비교하여 유사하게 나오는 것을 확인하였다.
+	* 평가셋에 대해 모델 추론 결과와 실제 정답의 유사성이 확인되었다.
+3. pretrained model 활용이 효과적임을 실험을 통해 확인하였다.
+	* pretrained model을 사용하지 않았을 때 대비 학습경과의 차이를 시각화를 통해 확인하였다.
+
+#### [학습과정]
+1. pretrained model 로딩하기
+2. pretrained model finetune 하기
+3. Inference 수행하기
+4. 학습 경과 시각화 비교분석
+#### [결론 및 회고]
+
+---
+
+## [E20] Conditional GAN : Segmentation map으로 도로 이미지 만들기
+#### [루브릭]
+1. pix2pix 모델 학습을 위해 필요한 데이터셋을 적절히 구축하였다.
+	* 데이터 분석 과정 및 한 가지 이상의 augmentation을 포함한 데이터셋 구축 과정이 체계적으로 제시되었다.
+2. pix2pix 모델을 구현하여 성공적으로 학습 과정을 진행하였다.
+	* U-Net generator, discriminator 모델 구현이 완료되어 train_step이 안정적으로 진행됨을 확인하였다.
+3. 학습 과정 및 테스트에 대한 시각화 결과를 제출하였다.
+	* 10 epoch 이상의 학습을 진행한 후 최종 테스트 결과에서 진행한 epoch 수에 걸맞은 정도의 품질을 확인하였다.
+#### [학습과정]
+1. 데이터에 한 가지 이상의 augmentation 방법을 적용하여 학습해주세요. (어떠한 방법을 사용했는지 적어주세요.)
+2. 이전에 구현했던 두 개의 Generator 중 Encoder와 Decoder간에 skip connection이 있는 U-Net Generator를 사용해주세요.
+3. 모델 학습 후, 학습된 Generator를 이용해 테스트합니다. 테스트 데이터는 다운받았던 "val" 폴더 내 이미지를 사용해주세요.
+4. 1개 이상의 이미지에 대해 테스트 과정을 거친 후 그 결과를 스케치, 생성된 사진, 실제 사진 순서로 나란히 시각화해 주세요.
+5. 모델을 충분히 학습하기에 시간이 부족할 수 있습니다. 적어도 10 epoch 이상 학습하며 중간 손실 값에 대한 로그를 남겨주세요. 좋은 결과를 얻기 위해선 긴 학습 시간이 필요하므로 테스트 결과는 만족스럽지 않아도 괜찮습니다.
+#### [결론 및 회고]
